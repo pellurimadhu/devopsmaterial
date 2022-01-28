@@ -1,0 +1,24 @@
+pods 
+Difference between Docker swarm and Kubernetes
+
+More features in Kuberentes, so the time taking for contianer
+
+etcd - more secure to store credentials
+even people working on cluster not able to access values from etcd
+
+API Server
+All operations carry over API server
+etcl will call API server then API server forward the command
+
+Schedular
+All the process on the server
+Scale up Scale down
+Cluster wide operations
+
+Controller Manager
+lot of controlers in Kubernetes
+So to manage all controlers we require Control manager
+Node controler
+Replication controler (Many types)
+End points controler
+Service Account and Token controler
