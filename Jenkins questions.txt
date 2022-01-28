@@ -1,0 +1,35 @@
+Q)What are the requirements for using Jenkins? 
+Q)Name the two components that Jenkins is mostly integrated with?
+
+Jenkins is typically integrated with these two components:
+
+Version Control systems like Git and SVN (Apache Subversion)
+Build tools like Maven
+
+Q)How can you deploy a custom build of a core plugin?
+If you wish to deploy a custom build of a core plugin, you may follow the following steps:
+
+Stop Jenkins
+Then copy the custom HPI to $Jenkins_Home/plugins
+After that, delete the previously expanded plugin directory
+Next, make an empty file called <plugin>.hpi.pinned
+Finally, start Jenkins
+
+
+Q)What could be the steps to move or copy Jenkins from one server to another?
+In order to move or copy Jenkins from one server to another, there may be multiple ways:
+
+You may move a job from one Jenkins installation to another just by copying the corresponding job directory.
+You may make a copy of an already existing job by making a clone of the job directory with an uncommon name.
+You may also just rename a current job by renaming a directory. 
+
+Q)Name some more continuous Integration tools other than Jenkins.?
+Some of the top continuous integration tools other than Jenkins are:
+
+TeamCity
+Travis CI
+Go CD
+Bamboo
+GitLab CI
+CircleCI
+Codeship

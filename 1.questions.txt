@@ -1,0 +1,51 @@
+What is Jenkins and pipeline?
+Jenkins is an open-source free automation tool used to build and test software projects. The tool makes it painless for developers to integrate changes to the project. Jenkins' primary focus is to keep track of the version control system and initiate and monitor a build system if there are any changes. It keeps an eye on the entire process and provides reports and notifications to alert.
+
+The pipeline represents the continuous delivery and continuous integration of all the jobs in the SDLC and DevOps life-cycle. 
+It connects this pipeline in a particular format by Jenkins. Jenkins pipeline is a set of plugins that support implementation and Integration of continuous delivery pipelines into Jenkins. 
+The Jenkins pipeline solves several problems like the maintenance of thousands of jobs and maintaining deployment with no other powerful methods.
+
+What are the features of Jenkins?
+Some of the crucial features of Jenkins are the following:
+
+It is a free and open-source automation tool
+Jenkins provides a vast number of plugins
+It is easy to set up and install on multiple operating systems
+Provides pipeline support
+Fast release cycles 
+Easy upgrades
+
+what are Different Pipeline jobs?
+Name the 5 popular plugin and what are the use cases in Jenkins?
+What is 2 scope (Global and system) of jenkins credentials?
+What is default port of Jenkins? How to change the port during run time?
+Default port is 8080.
+For changing port
+java -jar jenkins.war --httpPort=8081
+
+Can we run/install 2 Jenkins server in single OS, if it is possible then how?
+This will start two Jenkins same instances, one on port 8080 and one on 8081.
+
+suppose 2 devlopments are happening, current development and feature development how we are run simultaneous run the builds?
+Node configuration.
+
+What is the difference between declarative and scripted pipeline? what are agents?
+
+Assume that you have a pipeline. The first job that you performed was successful, but the second one failed.  What would you do now?
+You just have to restart the pipeline from the point where it failed by doing 'restart from stage.'
+
+Jenkins and Tomcat are installed on the same server how you will manage?
+By changing the port number.
+
+can you explain Jenkins job configuration? features of down stram project?
+Configure job with Steps l
+
+How we can secure the Jenkins job and what are the pulgin to secure?
+
+If forget Jenkins password how you wil login into Jenkins?
+Your Jenkins server has backend file system. There we should have config.xml, in that useSecurity by default it will be true, if we make out as False we can able to login without any password. (Before refreshing we need to kill the Jenkins process id. Then start Jenkins jar file.)
+
+If you want to trigger builds and PR is raised how build should trigger automatically?
+Pull Request Builder for PR and for commit Webhook
+
+How to save only last 5 builds of jenkins job?
