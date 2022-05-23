@@ -1,0 +1,462 @@
+CI/CD 10th January
+
+	Q) What is CI?
+	Q) What are difference stages in CI and CD?
+	Q) What are advantages of CI and CD?
+	Q) What is the difference between Continuous Delivery and continuous Deployment?
+	Q) In CI for each stage1 checkout which tool is used and how to integrate?
+	Q) In Continuous Integration what is meant by Continuous?
+	Q) In Poll SCM how Jenkins know if there any new changes in GIT?
+	Q) Different Deployment types and what is Blue Green Deployment?
+	Q) How is continuous integration achieved using Jenkins?
+	Delivery has manual approval process
+	Deployment does not required manual approval
+
+Prevent integration problems
+Integration bugs are detected early and are easy to track down due to small change sets. …
+Avoids last-minute chaos at release dates, when everyone tries to check in their slightly …
+Committing code frequently
+
+
+The mechanism is it takes latest commit id and compare the local commit id, Jenkins locally stores the commit id, so it compares the local commit id from Jenkins to Git latest commit id.
+
+7th February 2022
+
+	Q. What is CI?
+	Q. What is difference between CI, Continuous  Delivery and Continuous  Deployment?
+• Developers practicing continuous integration merge their changes back to the main branch as often as possible. By doing so, you avoid the integration hell that usually happens when people wait for release day to merge their changes into the release branch.
+• Continuous delivery is an extension of continuous integration to make sure that you can release new changes to your customers quickly in a sustainable way. This means that on top of having automated your testing, you also have automated your release process and you can deploy your application at any point of time by clicking on a button.
+• Continuous deployment goes one step further than continuous delivery. With this practice, every change that passes all stages of your production pipeline is released to your customers. There's no human intervention, and only a failed test will prevent a new change to be deployed to production.
+	Q. What is Devops Life cycle?
+	Q. How to Jenkins job from CLI?
+java -jar #File_Path/jenkins.war
+
+	Q. Name some of the CI/CD tools?
+	Q. Different type of Pipeline in Jenkins?
+	Q. What is difference between Canary and Blue and Green deployment?
+	Blue and Green Traffic affected where as in Canary Traffic is not affected
+	Q. How is DevOps different from Agile/SDLC?
+	• Agile software development methodology focuses on the development of software.
+	• DevOps on the other hand is responsible for development as well as deployment of the software in the safest and most reliable way possible
+	Q. What do you understand by shift left in Devops?
+	Q. While accessing to Jenkins if you get 404 error, how you Resolve?
+	If you get such error like it was mentioned above you should access through the URL "http://localhost:8080/jenkins/", but not only "http://localhost:8080". 
+	Q. Different stages for DevOps?
+	Q. What is the need for DevOps?
+__________________________________________________________________________
+
+Jenkins 11th January
+
+	Q) What is Jenkins and pipeline?
+	Q) What are the features of Jenkins?
+	Q) What are Different Pipeline jobs?
+	Q) Can we run/install 2 Jenkins server in single OS, if it is possible then how?
+	Q) What is the difference between declarative and scripted pipeline? what are agents?
+	Q) Jenkins and Tomcat are installed on the same server how you will manage?
+	Q) Can you explain Jenkins job configuration? features of downstream project?
+	Q) How we can secure the Jenkins job and what are the plugin to secure?
+	Q) If forget Jenkins password how you will login into Jenkins?
+	Q) If you want to trigger builds and PR is raised how build should trigger automatically?
+
+Jenkins 12th January - continuation 
+Jenkins shared library? 
+https://www.jenkins.io/doc/book/pipeline/shared-libraries/
+
+DSL Jekins ? 
+https://plugins.jenkins.io/job-dsl/
+
+How to hide password or API keys? either with credentials manager or Credentials plug-in
+Any plug-in for Keys? -->Credentials plug-in
+
+Multibranch pipeline ?
+
+How to provide access to user level permission?
+Role based access to User. (RBAC)
+
+what is Jenkins Security realm?
+https://www.jenkins.io/doc/book/security/managing-security/
+
+What is pre-requisite before install Jenkins?
+https://toolsqa.com/jenkins/install-jenkins/
+https://www.jenkins.io/doc/book/installing/
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+GIT and GitHub -- 17th January 2022
+
+	Q) What is Git and GitHub?
+	Q) What is the difference between Git and GitHub?
+	Q) How to update Last commit message ? Using amend command
+	Q) How to verify the repository link from local
+	Q) Branching strategy?
+	Q) How to switch branches in between work?
+	Q) What is sub git and why it is used?
+	Q) What is staging area or indexing area?
+	Q) What is git stash drop and why it is using?
+	Q) The git stash drop command is used to delete a stash from the queue.
+	Q) Explain about Git rebase and Git merge?
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Maven -- 18th January 2022
+
+	Q) Explain what is Maven? How does it work? What is architecture?
+Maven is a project management tool. It provides the developer a complete build lifecycle framework. On executing Maven commands, it will look for POM file in Maven; it will run the command on the resources described in the POM.
+
+	Q) What is Maven life cycle?
+	Q) What is POM, what are the elements used inside POM ->Project Object Model
+	Q) What are the commands to package project?
+	Q) What are different phases of build life cycle?
+            Validate, compile, test, package, verify, Install, and deploy
+
+	Q) What are the different maven repository? 
+	 Local, central and remote.
+	
+	Q) Where is Maven local repo located?
+	Q) List out the dependency scope in Maven?/Explain dependency in Maven?
+           The various dependency scope used in Maven are:
+	Compile: It is the default scope, and it indicates what dependency is available in the class path of the project
+	Provided: It indicates that the dependency is provided by JDK or web server or container at runtime
+	Runtime: This tells that the dependency is not needed for compilation but is required during execution
+	Test: It says dependency is available only for the test compilation and execution phases
+	System: It indicates you have to provide the system path
+	Import: This indicates that the identified or specified POM should be replaced with the dependencies in that POM’s section
+
+	Q) What are different plug-in Maven?
+2 types of plug-in - Build plugins and Reporting plugins
+Build plugins -->They execute during the build process and should be configured in the <build/> element of pom.xml.
+Reporting plugins -->They execute during the site generation process and they should be configured in the <reporting/> element of the pom.xml.
+
+	Q) Different Clean life cycle in Maven?
+Maven invokes the clean lifecycle consisting of the following phases. 1. pre-clean 2. clean 3. post-clean Maven clean goal (clean:clean) 
+
+	Q) What is command for Maven compile? What is use of mvn clean?
+Cleans up target after the build. Deletes the target directory.
+
+
+	Q) What is Build profile in Maven?
+A Build profile is a set of configuration values, which can be used to set or override default values of Maven build. Using a build profile, you can customize build for different environments such as Production v/s Development environments.
+Profiles are specified in pom.xml file using its activeProfiles/profiles elements and are triggered in variety of ways. 
+Different Maven profiles -->Per Project, Per User, Global
+
+	Q) Explain how you can exclude dependency?
+By using the exclusion element, dependency can be excluded?
+What is transitive dependency in Maven?
+Transitive decency means A depends B and B depends on C, so in this case A to C dependency called Transitive dependency.
+
+	Q) What is use of settings.xml?
+
+	Q) Usages of Maven plugin?
+Maven plugins are used to
+	Create a jar file
+	Create war file
+	Compile code files
+	Unit testing of code
+	Documenting projects
+	Reporting
+	Q) Where decencies are store in maven?
+./m2 folder
+
+	Q) Is maven is sequential? If yes define sequentially?
+
+	Q) Why maven takes much time for 1st execution and from 2nd execution it will take less time?
+First it will download all the dependencies and place it in /.m2 folder , and 2nd time onwards all the dependencies will be downloaded for the first and are stored locally /.m2 , so no need to down load second time  that is the reason it will take less time for execute for 2 time.
+	Q) What is Archetype and why we will use this in Maven?
+Archetype is maven plug-in. Archetype will help authors create Maven project templates for users, and provides users with the means to generate parameterized versions of those project templates. Using archetypes provides a great way to enable developers quickly in a way consistent with best practices employed by your project or organization
+
+Maven - Build Profiles (tutorialspoint.com)
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Docker -- 19th January 2022
+
+	Q) Explain Docker Architecture?
+	Docker Architecture consists of a Docker Engine which is a client-server application with three major components:
+		a. A server which is a type of long-running program called a daemon process (the docker command).
+		b. A REST API which specifies interfaces that programs can use to talk to the daemon and instruct it what to do.
+		c. A command line interface (CLI) client (the docker command).
+		d. The CLI uses the Docker REST API to control or interact with the Docker daemon through scripting or direct CLI commands. Many other Docker applications use the underlying API and CLI.
+	Q) What is Docker?
+	Docker is a containerization platform which packages your application and all its dependencies together in the form of containers so as to ensure that your application works seamlessly in any environment, be it development, test or production. Docker containers, wrap a piece of software in a complete filesystem that contains everything needed to run: code, runtime, system tools, system libraries, etc. It wraps basically anything that can be installed on a server. This guarantees that the software will always run the same, regardless of its environment.
+
+	Q) What is difference between Docker and VM?
+	The main difference between Docker and VM is that a docker provides container virtualization, while VM provides hardware-level virtualization.
+	
+	A docker is a platform to build, run and manage software containers, whereas VM is an abstraction of physical hardware, turning one server into many servers. The main difference between Docker and VM is that a docker provides container virtualization, while VM provides hardware-level virtualization.
+	
+	
+	Q) Advantages of Docker?
+	Major advantage of using Docker.
+		○ Offers an efficient and easy initial set up
+		○ Allows you to describe your application lifecycle in detail
+		○ Simple configuration and interacts with Docker Compose.
+		○ Documentation provides every bit of information.
+	Q) What is lifecycle of Docker container?
+	This is one of the most popular questions asked in Docker interviews. Docker containers have the following lifecycle:
+		○ Create a container
+		○ Run the container
+		○ Pause the container(optional)
+		○ Un-pause the container(optional)
+		○ Start the container
+		○ Stop the container
+		○ Restart the container
+		○ Kill the container
+		○ Destroy the container
+	Q) 5 Docker Basic commands? Purpose of the commands?
+	Q) What is docker compose and what are features of docker compose?
+	Multi container purpose
+	Q) Explain about Dockerfile?
+	Q) Difference between COPY and ADD commands?
+	Q) Difference between CMD and ENTRYPOINT commands?
+	Q) Advantages /uses of CMD and ENTRYPOINT?
+	Q) What is difference between Docker image and Layers?
+	Q) What are the steps for the Docker container life cycle? -->Build, pull, Run
+	Q) Explain various Docker component?
+	Q) Can docker container restart by itself?
+	If you're application is able to detect issues, you can easily have the container restart itself. The two important things are the --restart flag and that the application exists when it detects an issue. With the restart policy, you control what Docker does when the command exists.
+	Q) Docker network?
+	Default network is Bridge,
+	User-defined bridge networks are best when you need multiple containers to communicate on the same Docker host.
+	Host networks are best when the network stack should not be isolated from the Docker host, but you want other aspects of the container to be isolated.
+	Overlay networks are best when you need containers running on different Docker hosts to communicate, or when multiple applications work together using swarm services.
+	Macvlan networks are best when you are migrating from a VM setup or need your containers to look like physical hosts on your network, each with a unique MAC address.
+	Third-party network plugins allow you to integrate Docker with specialized network stacks.
+	
+	Q) Can we lose data inside container?
+	No,  When stop we do not lose data, but when we delete the container, we lose data.
+	Q) What is docker prune and how it is used?
+	For Deleting stopped containers, dangling images and unused networks.
+	Q) Command to build the dockerfile? How to push the image to docker hub?
+	Q) Different kinds of mount types in Docker?
+	 There are 3 types of mounts which you can use in your Docker container viz. Volumes, Bind mount and tmpfs mounts.
+	Q) Difference between docker stop and docker kill?
+	
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Jira -- 20th January 2022
+
+	Q)  What is JIRA and Its workflow?
+
+JIRA is an issue tracking product or a software tool developed by Atlassian, commonly used for bug tracking, project management, and issue tracking; it is entirely based on these three aspects. It is widely used in software development and software testing.
+
+Workflow is defined as a movement of the bug/issue through various stages during its life-cycle
+Created/Open
+WIP ( Work In Progress)
+Completed/Closed
+
+	Q) Why we use JIRA software?
+The reason behind using JIRA is
+
+Upfront and fair licensing policy
+Features that is not available elsewhere
+Get the latest update on the progress of projects
+It runs anywhere and recognized with many famous companies
+Easily extensible and customizable
+
+	Q) What are agile methodologies supported by Jira?
+          Scrum and Kanban
+
+Q) What is labeling in Jira?
+
+	Q) What's are source control tools integrate to Jira?
+            Github, Bitbucket
+
+	Q) What are the issue types available in JIRA?
+             Story, Task, bug, Epic.
+
+	Q) What is Jira Backlog?
+
+	Q)  What do you mean by Scheduling an issue?
+            Scheduling the issue means scheduling the work of issue for a particular ‘due date’.
+            For this function to work, one must have ‘Schedule issue permission’ by JIRA Administrator. In this case, a field with
+            ‘Due Date’ is being populated.
+
+	Q)  How is a sub-task created in JIRA?
+
+	Sub-task is the way of splitting up of parent issue into a number of small tasks which are tracked and worked on separately.
+	
+	The parent issue contains the information of all its sub-tasks which can be only of the same project. A parent issue cannot be closed unless and until all its sub-tasks are closed. A sub-task has the same fields as that of any standard-issue but their issue types are different.
+
+	Q)  Watch list in Jira?
+
+	Q) Explain task and sub-task default template?
+
+	Q) What is sprint in Jira?
+
+	Q) Name the types of reports generated in JIRA?
+	JIRA offer reports that show statistics for projects, versions, people or other fields within issues.  Various reports included with JIRA are
+	
+	Average Age Report
+	Pie Chart Report
+	Resolution Time Report
+	Recently Created Issues Report
+	Resolved vs. Created Issues Report
+	Single Level Group by Report
+	Time Tracking Report
+	User Workload Report
+	Workload Pie Chart Report, etc.
+
+	Q) Explain the three color indicators and their significance.
+
+	For any particular issue in JIRA, 3 colors like Blue, Green, and Orange is used to denote the amount of time spent on any particular issue. This information is displayed under ‘Time Tracking’ section. Each color has its own significance like;
+	
+	Blue: This color is to denote the ‘Original Estimate’ i.e. the time estimate to be invested in resolving the issue. This field has been labeled as ‘Estimated’.
+	Orange: This color determines the time left for resolving the issue. This field has been labeled as ‘Remaining’.
+	Green: This color defines the actual time that has been used or say spent in resolving the issue so far. This field has been labeled as ‘logged’.
+
+	Q) What is Audit log in Jira?
+	 The audit log is intended to record configuration changes that can impact users and projects. You can't sort the audit log
+
+	Q) How to add new fields in Jira?
+	 Jira Admins can add an existing field or create a custom field while in View Issue with the Admin > Add field option. You can even configure the options for that custom field without having to leave the screens you are presented with. Adding a field using the Add Custom Field button Choose Administration () > Issues.
+
+	Q) How to modify bulk issues in Jira?
+	Click the Bulk actions menu > Bulk change in Jira. The bulk change operation window in Jira will open in a new tab.
+	Q) How to create user in Jira? And how to assign dashboard?
+		○ Select > User Management.
+		○ In the User browser, click Create User.
+		○ Enter the Username , Password , Full Name and Email address.
+		○ Optionally, select the Send Notification Email checkbox to send the user an email containing: their login name. ...
+		○ If you have more than one Jira application installed, you will need to select the Jira application you would like to give the user access to
+	Q) How many stages in Kanban and scrum board?
+	
+	Q) I have subtask Open, WIP, Close. In the work flow I have to add in between is 'some stage' how to add?
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ansible-- 21st January 2022
+
+	Q) Why we are using Ansible?
+	Q) What are different modules in Ansible?
+	Q) What is the use of Inventory file?
+ These are the lists of nodes or hosts containing their databases, servers, IP addresses, etc. 
+	Q) What are pre-requisite to Ansible playbook? How to Install Ansible?
+	Q) What are adhoc commands in Ansible?
+	Q) Host file path on Ansible?
+	Q) What is Ansible tower?
+	Ansible is classified as a web-based solution which makes Ansible very easy to use. It is considered to be or acts like a hub for all of your automation tasks. The tower is free for usage till 10 nodes.
+	Q) What is ansible.cfg file? Where it present in Ansible?
+	Present under /etc/ansible, we can define certain settings, like where is host file, which user all the details can be given.
+	Q) What is the use of Ansible galaxy?
+	Ansible Galaxy refers to the website Galaxy where the users will be able to share all the roles to a CLI ( Command Line Interface) where the installation, creation, and managing of roles happen
+	Q) What is handler in ansible? Why it is used?
+	In Ansible, handlers are just like normal tasks in a playbook but run when tasks include the notify directive and also indicate that it changed something. It runs only once after all the tasks executed in a particular play. It automatically loads through roles/<role_name>/handlers/main.yaml. 
+	They are used to trigger the status of a service, such as restarting or stopping a service.
+	Q) When I need detailed logs on executing ansible playbook what option i need to use?
+	ansible-playbook -i hosts copy.yml --> will give minimal information.
+	ansible-playbook -i hosts copy.yml -vvv --> will give details information.
+	Q) What is Ansible Inventory and what are it types?
+	An inventory is an initialization file that has details about the different servers that you are managing.
+	In Ansible, there are two types of inventory files, static and dynamic.
+		• Static inventory: Static inventory file is a list of managed hosts declared under a host group using either hostnames or IP addresses in a plain text file. The managed host entries are listed below the group name in each line.
+		• Dynamic inventory: Dynamic inventory is generated by a script written in Python or any other programming language or, preferably, by using plug-ins. In a cloud set-up, static inventory file configuration will fail since IP addresses change once a virtual server is stopped and started again.
+	
+	Q) What are the feature of Ansible tower?
+	Features of the Ansible Tower are:
+	Ansible Dashboard
+	Real-time job status updates
+	Multi-playbook workflows
+	Who Ran What Job When
+	Scale capacity with tower clusters
+	Integrated notifications
+	Schedule ansible jobs
+	Manage and track inventory
+	Remote command execution
+	REST API & Tower CLI Tool 
+	Q) What is an Ansible vault?
+	Ansible vault is used to keep sensitive data, such as passwords, instead of placing it as plain text in playbooks or roles. Any structured data file or single value inside a YAML file can be encrypted by Ansible.
+	To encrypt the data:
+	
+	Command: ansible-vault encrypt foo.yml bar.yml baz.yml
+	
+	To decrypt the data:
+	Command: ansible-vault decrypt foo.yml bar.yml baz.yml
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+Kubernetes 24th January 2022
+
+	Q) What is Kubernetes architecture of Master node.
+	Q) What are different Services?
+	Q) Components are Worker nodes
+	Q) What do you understand by etcd?
+	Kubernetes uses etcd as a distributed key-value store for all of its data, including metadata and configuration data, and allows nodes in Kubernetes clusters to read and write data. Although etcd was purposely built for CoreOS, it also works on a variety of operating systems (e.g., Linux, BSB, and OS X) because it is open-source. Etcd represents the state of a cluster at a specific moment in time and is a canonical hub for state management and cluster coordination of a Kubernetes cluster.
+	
+	Q) What is ingress network and how it will work?
+	Ingress network is a collection of rules that acts as an entry point to the Kubernetes cluster. This allows inbound connections, which can be configured to give services externally through reachable URLs, load balance traffic, or by offering name-based virtual hosting.
+	
+	Q) What are different types of multi containers in Kubernetes?
+	
+	Q) What is role kube api server and kube schedular.
+	Q) Main difference between Docker Swarm and Kubernetes?
+	
+	Q) What is Headless service?
+	A headless service is used to interface with service discovery mechanisms without being tied to a ClusterIP, therefore allowing you to directly reach pods without having to access them through a proxy. It is useful when neither load balancing nor a single Service IP is required.
+	Q) Explain about Kube control manager?
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AWS 27th January 2022
+
+	Q) What are PaaS services in Cloud? What is difference between PaaS and SaaS?
+	
+	Q) What are basic services required to set up as EC2?
+	Q) What is the use of CloudWatch?
+	Q) Can you brief about S3 service in AWS?
+	Q) What is AMI?
+	Q) What is the region and availability zone?
+	Q) What is difference between scalability and flexibility in AWS?
+	Scalability: The ability of any scheme to intensify the tasks on its hardware resources to hold the inconsistency in command is called as scalability. 
+	Flexibility: The aptitude of a schema that augments the task on the hardware property is known as flexibility.
+	Q) What is EBS in AWS?
+	Q) What is difference between EBS and EFS?
+	Q) What are AWS service that are not region specific?
+	IAM, S3, Route 53.
+	Q) How to detach EC2 from Auto scaling?
+	Q) What is Route 53 in AWS?
+	Q) What is difference between Security group and NACL?
+	Q) What is VPC, what re different components in VPC?
+	Subnet, Internet Gateway, NAT Gateway, HW VPN Connection, Virtual Private Gateway, Customer Gateway, Router, Peering Connection, VPC Endpoint for S3, Egress-only Internet Gateway.
+	Q) What is difference between sys and ops?
+	Q) What is dynamo DB in AWS?
+	Its No SQL DB, With DynamoDB, you can create database tables that can store and retrieve any amount of data and serve any level of request traffic. You can scale up or scale down your tables' throughput capacity without downtime or performance degradation. You can use the AWS Management Console to monitor resource utilization and performance metrics.
+	Q) What are the different types of Instances?
+	Q) What are different types of Load balancer?
+	Q) What is the difference between role and policy?
+	Q) What is EKS Cluster?
+	Q) 2/2 checked means?
+	Q) How to access S3 bucket from EC2 instance?
+	Grant an EC2 instance access to an S3 bucket (amazon.com)
+	Q) What is snowball?
+	To Transfer large amount of data.
+	Q) Inbound and outbound rules?
+	Q) What are the Store classes in S3?
+		• S3 Standard, 
+		• S3 Intelligent-tier.
+		• S3 Standard-IA.
+		• S3 One Zone-IA.
+		• S3 Glacier
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	Azure 31st January 2022
+	Q) What is Azure cloud?
+	
+	Q) How can we add bulk users to AD(Active directory)
+	
+	Q) Difference between AWS and Microsoft Azure?
+	Q) What are the different types for storage in Azure?
+	Q) What is V Net and use of Vnet?
+	Q)  What is the use of Storage key?
+	Storage keys or access keys are utilized as a validation mode for accessing the storage services account to control data based on our prerequisites. In Windows Azure, we have an alternative to give a primary access key and a secondary access key, despite the fact that we will utilize a solitary access key to confirm our application to the storage. The primary reason to give the secondary access key is to avoid downtime to the application.
+	Q)  What is the purpose of Resource manager?
+	Q) What is the Resource?
+	Q) How to create VM in Azure?
+	Q) What is traffic manager in Azure? What are the Types of Loadbalancer?
+	Q) What are the drawbacks of MS Azure?
+	Q) What are the three components of Windows Azure?
+	Q) What is NSG (Network Security Group)?
+	Like NACL in AWS, Security group at subnet level.
+	Q) What is the blob (Binary Large Objects) storage?
+	same as S3 in AWS, blob uses in Azure.
+	Q) What is the distinction between Public Cloud and Private Cloud?
+	Q) What is SAS service in Azure ?
+	Shared acess Signature (SAS) -->
+	Q)  What are the difference between, public, private and hybrid cloud?
+	Q)  Explain Availability set in Azure?
+	Q)  What are the available options to deployment?
+	Q)  What do you understand by RBAC?
+	Q)  What is Route table? How to route traffic inside vnet?
